@@ -1,0 +1,24 @@
+name: Deploy to InfinityFree
+     on:
+       push:
+         branches:
+           - main  # Trigger on push to the main branch
+     jobs:
+       deploy:
+         runs-on: ubuntu-latest
+         steps:
+           - name: Checkout code
+             uses: actions/checkout@v4
+           - name: Upload to InfinityFree via FTP
+             uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+             with:
+               server: ftp.epizy.com
+               username: ${{ secrets.FTP_USERNAME }}
+               password: ${{ secrets.FTP_PASSWORD }}
+               local-dir: ./  # Upload all files from the repo root
+               server-dir: /htdocs/  # Destination folder on InfinityFree
+               exclude: |
+                 **/.git/**
+                 **/.github/**
+                 **/node_modules/**
+                 **/vendor/**
