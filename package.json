@@ -1,0 +1,23 @@
+{
+  "name": "westway-express",
+  "version": "1.0.0",
+  "description": "Westway Express Logistics Website",
+  "main": "index.php",
+  "scripts": {
+    "build-css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.min.css --minify",
+    "watch-css": "tailwindcss -i ./assets/css/input.css -o ./assets/css/tailwind.min.css --watch",
+    "dev": "npm run watch-css",
+    "update-browserslist": "npx update-browserslist-db@latest"
+  },
+  "keywords": [
+    "logistics",
+    "shipping",
+    "freight",
+    "cargo"
+  ],
+  "author": "Westway Express",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}

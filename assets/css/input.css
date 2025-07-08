@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Westway Express Styles */
+:root {
+  --cargo-blue: #1e40af;
+  --cargo-orange: #f97316;
+  --cargo-red: #dc2626;
+  --cargo-dark: #0f172a;
+}
+
+/* Animation Classes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Component Styles */
+.hero-slider {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 1.5s ease-in-out;
+}
+
+.world-map-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 500'%3E%3Cpath d='M158 206c-1 3-2 7-2 11 0 4 1 8 2 11l5 9c2 3 5 5 8 6l7 2c3 0 6-1 8-3l6-5c2-2 3-5 3-8v-8c0-3-1-6-3-8l-6-5c-2-2-5-3-8-3l-7 2c-3 1-6 3-8 6l-5 9z' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--cargo-blue), var(--cargo-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.counter {
+  font-variant-numeric: tabular-nums;
+}
+
+.team-card {
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-card {
+  transition: all 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-15px) scale(1.02);
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.language-dropdown {
+  position: relative;
+}
+
+.language-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
